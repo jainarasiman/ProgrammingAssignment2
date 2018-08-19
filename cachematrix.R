@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {   #Function to make a matrix
 cacheSolve <- function(x, ...) {     ##Function for getting the inverse of the matrix.
   inv <- x$getinv()                  ##If the inverse was calculated before then this function will retrieve it from cache
   if(!is.null(inv)) {
-    message("getting cached result")
+    message("getting cached matrix")
     return(inv)
   }
   data <- x$get()
@@ -20,4 +20,3 @@ cacheSolve <- function(x, ...) {     ##Function for getting the inverse of the m
   x$setinv(inv)
   inv
 }
-# the function doesn't work if the matrix is singular since its an inverse
